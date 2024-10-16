@@ -1,0 +1,32 @@
+.landingPage__link {
+  text-decoration: none;
+}
+
+.landingPage__section {
+  height: 100vh;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #000000;
+}
+
+.landingPage__heading {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 24.83px;
+  text-transform: uppercase;
+  font-family: Righteous, sans-serif;
+}
+
+.landingPage__text {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 18.12px;
+  font-family: PT Sans, sans-serif;
+}

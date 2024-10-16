@@ -1,0 +1,65 @@
+.setTimer__section {
+  height: 100vh;
+  padding: 1rem;
+  background-color: white;
+  position: absolute;
+  top: 274px;
+  right: 0;
+  left: 0;
+  bottom: auto;
+}
+
+.setTimer__logo {
+  height: 32px;
+  width: 32px;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.setTimer__time-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+.setTimer__time-section__nmbr-text-wrapper {
+  text-align: center;
+}
+
+.setTimer__time-section__time {
+  font-size: 80px;
+  letter-spacing: 2px;
+  line-height: 103.52px;
+  font-family: PT sans, sans-serif;
+}
+
+.setTimer__time-section__arrow {
+  margin: 2.65rem;
+}
+
+.setTimer__time-section__time-text {
+  opacity: 0.6;
+  font-size: 16px;
+  line-height: 20.7px;
+  letter-spacing: 2px;
+  font-family: PT sans, sans-serif;
+}
+
+.setTimer__checkbox-wrapper {
+  padding: 2rem;
+}
+.setTimer__btn {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 24px;
+  font-weight: 800;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  line-height: 31.06px;
+  text-transform: uppercase;
+  border: 1.5px solid #222222;
+  font-family: PT sans, sans-serif;
+  background-color: rgb(255, 255, 255);
+}
