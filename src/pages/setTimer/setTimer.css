@@ -8,13 +8,6 @@
   bottom: auto;
 }
 
-.setTimer__logo {
-  height: 32px;
-  width: 32px;
-  margin-top: 1rem;
-  margin-left: 1rem;
-}
-
 .setTimer__time-section {
   display: flex;
   flex-direction: row;

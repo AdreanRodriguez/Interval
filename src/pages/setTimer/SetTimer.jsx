@@ -1,13 +1,13 @@
 import "./setTimer.css";
-import logoBlack from "../../assets/logo-black.svg";
 import leftArrow from "../../assets/left-arrow.svg";
 import rightArrow from "../../assets/right-arrow.svg";
 import Checkbox from "../../components/checkbox/Checkbox";
+import Menu from "../../components/menu/Menu";
 
 function SetTimer() {
   return (
     <>
-      <img className="setTimer__logo" src={logoBlack} alt="A logo" />
+      <Menu />
       <section className="setTimer__section">
         <section className="setTimer__time-section">
           <img className="setTimer__time-section__arrow" src={leftArrow} alt="A arrow logo" />
