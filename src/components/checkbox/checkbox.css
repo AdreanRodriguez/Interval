@@ -9,9 +9,8 @@
   height: 24px;
 }
 
-input:checked {
-  border: none;
-  background-color: black;
+input[type="checkbox"]:checked {
+  accent-color: #000;
 }
 
 .label {
