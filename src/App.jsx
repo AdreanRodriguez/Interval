@@ -5,6 +5,7 @@ import LandingPage from "./pages/landingPage/LandingPage.jsx";
 import AnalogTimer from "./pages/analogTimer/AnalogTimer.jsx";
 import DigitalTimer from "./pages/digitalTimer/DigitalTimer";
 import TextTimer from "./pages/textTimer/TextTimer";
+import AlarmView from "./pages/alarmView/AlarmView.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/analogTimer" element={<AnalogTimer />} />
         <Route path="/digitalTimer" element={<DigitalTimer />} />
         <Route path="/textTimer" element={<TextTimer />} />
+        <Route path="/alarmView" element={<AlarmView />} />
       </Routes>
     </main>
   );

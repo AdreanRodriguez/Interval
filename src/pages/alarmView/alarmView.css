@@ -1,0 +1,39 @@
+.alarmView__section {
+  height: 100vh;
+  background-image: url(../../assets/alarmViewCircles.svg);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: center;
+  background-size: 100%;
+  background-color: #222222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alarmView__alarm-wrapper {
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.alarmView__logo {
+  width: 85px;
+  height: 85px;
+  margin-bottom: 1rem;
+}
+
+.alarmView__text {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 46.58px;
+  letter-spacing: 0.1em;
+  font-family: PT sans, sans-serif;
+}
+
+.btn-white-text {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
