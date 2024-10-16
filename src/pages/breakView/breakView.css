@@ -1,4 +1,4 @@
-.alarmView__section {
+.breakView__section {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -12,18 +12,18 @@
   background-image: url(../../assets/alarmViewCircles.svg);
 }
 
-.alarmView__alarm-wrapper {
+.breakView__alarm-wrapper {
   margin-top: 10rem;
   text-align: center;
 }
 
-.alarmView__logo {
-  width: 85px;
-  height: 85px;
+.breakView__logo {
+  width: 40px;
+  height: 50px;
   margin-bottom: 1rem;
 }
 
-.alarmView__text {
+.breakView__text {
   font-size: 36px;
   font-weight: 700;
   color: #ffffff;
