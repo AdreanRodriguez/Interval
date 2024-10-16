@@ -6,8 +6,8 @@
 
 .checkbox__label-wrapper {
   display: flex;
-  align-items: center;
   margin: 1rem 0;
+  align-items: center;
 }
 
 .checkbox {
@@ -23,19 +23,22 @@ input[type="checkbox"]:checked {
   font-size: 20px;
   font-weight: 400;
   padding-left: 1rem;
-  letter-spacing: 0.1em;
   line-height: 25.88px;
+  letter-spacing: 0.1em;
   font-family: PT sans, sans-serif;
 }
 
 .setTimer__btn {
-  width: 100%;
+  display: flex;
   padding: 10px 0;
   font-size: 24px;
   font-weight: 800;
+  color: #222222;
   border-radius: 5px;
-  letter-spacing: 0.1em;
   line-height: 31.06px;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  justify-content: center;
   text-transform: uppercase;
   border: 1.5px solid #222222;
   font-family: PT sans, sans-serif;

@@ -1,4 +1,3 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import SetTimer from "./pages/setTimer/SetTimer.jsx";
 import TextTimer from "./pages/textTimer/TextTimer.jsx";
@@ -10,7 +9,7 @@ import DigitalTimer from "./pages/digitalTimer/DigitalTimer.jsx";
 
 function App() {
   return (
-    <main className="main">
+    <main>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/setTimer" element={<SetTimer />} />

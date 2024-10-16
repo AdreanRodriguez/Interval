@@ -1,0 +1,32 @@
+.clock {
+  width: 278px;
+  height: 278px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.clock__img {
+  position: absolute;
+}
+
+.clock__min-img {
+  top: 14.78px;
+  position: absolute;
+  /* transform: rotate(180deg);
+  transform-origin: bottom center; */
+}
+
+.clock__sec-img {
+  top: 14px;
+  position: absolute;
+}
+.clock__grey-dot-img {
+  top: 134px;
+  position: absolute;
+}
+
+.clock__black-dot-img {
+  top: 131px;
+  position: absolute;
+}

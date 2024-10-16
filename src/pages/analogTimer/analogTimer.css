@@ -16,7 +16,7 @@
   font-family: PT sans, sans-serif;
 }
 
-.analogTimer__clock {
+/* .analogTimer__clock {
   width: 278px;
   height: 278px;
   position: relative;
@@ -36,8 +36,6 @@
 .analogTimer__img-min {
   position: absolute;
   top: 14.78px;
-  /* transform: rotate(180deg);
-  transform-origin: bottom center; */
 }
 
 .analogTimer__img-sec {
@@ -47,4 +45,4 @@
 .analogTimer__img-dot {
   position: absolute;
   top: 134px;
-}
+} */

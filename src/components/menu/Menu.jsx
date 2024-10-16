@@ -26,7 +26,7 @@ function Menu() {
         alt="Logo"
         onClick={handleMenuClick}
       />
-      <section className="menu__section">
+      <menu className="menu__section">
         <Link className="menu__link" to="/analogTimer">
           <p className="menu__text">Analog timer</p>
         </Link>
@@ -36,7 +36,7 @@ function Menu() {
         <Link className="menu__link" to="/textTimer">
           <p className="menu__text">Text timer</p>
         </Link>
-      </section>
+      </menu>
     </>
   );
 }

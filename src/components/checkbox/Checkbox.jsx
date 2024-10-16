@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./checkbox.css";
 
 function Checkbox() {
@@ -11,7 +12,9 @@ function Checkbox() {
         <input className="checkbox" type="checkbox" id="checkbox2" />
         <label className="label">5 min break / interval (VG)</label>
       </div>
-      <button className="setTimer__btn">Start timer</button>
+      <Link to="/digitalTimer" className="setTimer__btn">
+        Start timer
+      </Link>
     </section>
   );
 }

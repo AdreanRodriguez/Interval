@@ -11,4 +11,18 @@
   background-color: white;
   border: 1px solid #222222;
   font-family: PT sans, sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  animation: scaleUp 0.3s forwards;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
