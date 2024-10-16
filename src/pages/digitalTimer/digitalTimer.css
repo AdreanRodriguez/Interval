@@ -1,0 +1,25 @@
+.digitalTimer__section {
+  height: 100vh;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.digitalTimer__heading {
+  margin-top: 1rem;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 25.88px;
+  font-family: PT sans, sans-serif;
+}
+
+.digitalTimer__time {
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 103.52px;
+  font-family: PT sans, sans-serif;
+}

@@ -1,12 +1,15 @@
-import Menu from "../../components/menu/Menu";
 import "./digitalTimer.css";
+import Menu from "../../components/menu/Menu";
+import Button from "./../../components/button/Button";
 
 function DigitalTimer() {
   return (
-    <div>
+    <section className="digitalTimer__section">
       <Menu />
-      DigitalTimer
-    </div>
+      <p className="digitalTimer__heading">interval</p>
+      <time className="digitalTimer__time">7:32</time>
+      <Button text="abort timer" />
+    </section>
   );
 }
 
