@@ -1,5 +1,4 @@
 .button {
-  width: 134px;
   opacity: 0.6;
   padding: 10px;
   font-size: 16px;
@@ -7,6 +6,7 @@
   color: #222222;
   border-radius: 5px;
   margin-bottom: 3rem;
+  text-decoration: none;
   text-transform: uppercase;
   background-color: white;
   border: 1px solid #222222;

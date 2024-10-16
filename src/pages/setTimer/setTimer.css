@@ -22,7 +22,7 @@
 
 .setTimer__time-section__time {
   font-size: 80px;
-  letter-spacing: 2px;
+  letter-spacing: 0.1em;
   line-height: 103.52px;
   font-family: PT sans, sans-serif;
 }
@@ -35,6 +35,6 @@
   opacity: 0.6;
   font-size: 16px;
   line-height: 20.7px;
-  letter-spacing: 2px;
+  letter-spacing: 0.1em;
   font-family: PT sans, sans-serif;
 }

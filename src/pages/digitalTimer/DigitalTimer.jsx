@@ -8,7 +8,7 @@ function DigitalTimer() {
       <Menu />
       <p className="digitalTimer__heading">interval</p>
       <time className="digitalTimer__time">7:32</time>
-      <Button text="abort timer" />
+      <Button text="abort timer" href="/setTimer" />
     </section>
   );
 }

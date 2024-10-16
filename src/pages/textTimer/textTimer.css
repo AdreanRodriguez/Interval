@@ -1,0 +1,27 @@
+.textTimer__section {
+  height: 100vh;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.textTimer__heading {
+  margin-top: 1rem;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 25.88px;
+  font-family: PT sans, sans-serif;
+}
+
+.textTimer__text {
+  font-size: 30px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 42px;
+  letter-spacing: 0.1em;
+  font-family: PT sans, sans-serif;
+  text-transform: uppercase;
+}

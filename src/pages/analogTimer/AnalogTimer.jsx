@@ -19,7 +19,7 @@ function AnalogTimer() {
         <img className="analogTimer__img-sec" src={second} alt="second" />
         <img className="analogTimer__img-dot" src={lightGreyDot} alt="lightGreyDot" />
       </time>
-      <Button text="abort timer" />
+      <Button text="abort timer" href="/setTimer" />
     </section>
   );
 }
