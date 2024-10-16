@@ -1,7 +1,13 @@
-.checkbox__wrapper {
+.checkbox__container {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  margin-top: 4.25rem;
+}
+
+.checkbox__label-wrapper {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .checkbox {
@@ -20,4 +26,18 @@ input[type="checkbox"]:checked {
   letter-spacing: 2px;
   line-height: 25.88px;
   font-family: PT sans, sans-serif;
+}
+
+.setTimer__btn {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 24px;
+  font-weight: 800;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  line-height: 31.06px;
+  text-transform: uppercase;
+  border: 1.5px solid #222222;
+  font-family: PT sans, sans-serif;
+  background-color: rgb(255, 255, 255);
 }

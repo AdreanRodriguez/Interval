@@ -1,6 +1,5 @@
 .setTimer__section {
-  height: 100vh;
-  padding: 1rem;
+  padding: 0 1rem;
   background-color: white;
   position: absolute;
   top: 274px;
@@ -45,21 +44,4 @@
   line-height: 20.7px;
   letter-spacing: 2px;
   font-family: PT sans, sans-serif;
-}
-
-.setTimer__checkbox-wrapper {
-  padding: 2rem;
-}
-.setTimer__btn {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 24px;
-  font-weight: 800;
-  border-radius: 5px;
-  letter-spacing: 2px;
-  line-height: 31.06px;
-  text-transform: uppercase;
-  border: 1.5px solid #222222;
-  font-family: PT sans, sans-serif;
-  background-color: rgb(255, 255, 255);
 }

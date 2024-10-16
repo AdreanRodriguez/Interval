@@ -1,12 +1,17 @@
 import "./checkbox.css";
 
-function Checkbox({ id, text }) {
+function Checkbox() {
   return (
-    <section className="checkbox__wrapper">
-      <input className="checkbox" type="checkbox" id={id} />
-      <label className="label" htmlFor={id}>
-        {text}
-      </label>
+    <section className="checkbox__container">
+      <div className="checkbox__label-wrapper">
+        <input className="checkbox" type="checkbox" id="checkbox1" />
+        <label className="label">intervals (VG)</label>
+      </div>
+      <div className="checkbox__label-wrapper">
+        <input className="checkbox" type="checkbox" id="checkbox2" />
+        <label className="label">5 min break / interval (VG)</label>
+      </div>
+      <button className="setTimer__btn">Start timer</button>
     </section>
   );
 }
