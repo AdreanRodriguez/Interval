@@ -13,13 +13,13 @@
 .clock__min-img {
   top: 14.78px;
   position: absolute;
-  /* transform: rotate(180deg);
-  transform-origin: bottom center; */
+  transform-origin: bottom center;
 }
 
 .clock__sec-img {
   top: 14px;
   position: absolute;
+  transform-origin: bottom center;
 }
 .clock__grey-dot-img {
   top: 134px;

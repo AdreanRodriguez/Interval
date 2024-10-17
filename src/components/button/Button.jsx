@@ -1,11 +1,23 @@
 import "./button.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function Button({ href, text, className }) {
+function Button({ href, text, className, onClick }) {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    if (onClick) {
+      onClick();
+    }
+
+    if (href) {
+      navigate(href);
+    }
+  }
+
   return (
-    <Link to={href} className={`button ${className}`}>
+    <button className={`button ${className}`} onClick={handleClick}>
       {text}
-    </Link>
+    </button>
   );
 }
 

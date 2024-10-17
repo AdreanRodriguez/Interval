@@ -1,11 +1,19 @@
 .setTimer__section {
+  height: 100vh;
   padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: white;
-  position: absolute;
+  /* position: absolute;
   top: 274px;
   right: 0;
   left: 0;
-  bottom: auto;
+  bottom: auto; */
+}
+
+.setTimer__margin-bottom {
+  margin-bottom: 10rem;
 }
 
 .setTimer__time-section {
@@ -37,4 +45,21 @@
   line-height: 20.7px;
   letter-spacing: 0.1em;
   font-family: PT sans, sans-serif;
+}
+
+.setTimer__btn {
+  display: flex;
+  padding: 10px 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #222222;
+  border-radius: 5px;
+  margin-bottom: 3rem;
+  line-height: 31.06px;
+  letter-spacing: 0.1em;
+  justify-content: center;
+  text-transform: uppercase;
+  border: 1.5px solid #222222;
+  font-family: PT sans, sans-serif;
+  background-color: rgb(255, 255, 255);
 }
