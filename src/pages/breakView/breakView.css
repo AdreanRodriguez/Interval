@@ -37,3 +37,13 @@
   border: 1px solid #ffffff;
   color: #ffffff;
 }
+
+.breakView__time-left {
+  opacity: 0.6;
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 31.06px;
+  letter-spacing: 0.1em;
+  font-family: PT sans, sans-serif;
+}

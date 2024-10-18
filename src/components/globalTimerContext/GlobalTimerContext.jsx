@@ -2,12 +2,15 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const GlobalTimerContext = createContext();
 
-// GlobalTimerContext som hanterar timerns logik och delar den med andra komponenter
 export function GlobalTimerProvider({ children }) {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [isDone, setIsDone] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
+  const [breakEnabled, setBreakEnabled] = useState(false);
+  const [currentInterval, setCurrentInterval] = useState(0);
+  const [minutesSetByUser, setMinutesSetByUser] = useState(0);
+  const [intervalEnabled, setIntervalEnabled] = useState(false);
 
   useEffect(() => {
     let timer;
@@ -15,54 +18,88 @@ export function GlobalTimerProvider({ children }) {
       timer = setInterval(() => {
         setSeconds((prevSeconds) => {
           if (prevSeconds > 0) {
-            return prevSeconds - 1;
+            return prevSeconds - 10;
           } else if (minutes > 0) {
-            setMinutes((prevMinutes) => prevMinutes - 1);
-            return 59;
-          } else {
-            clearInterval(timer);
-            setIsRunning(false);
-            setIsDone(true);
-            return 0;
+            setMinutes(minutes - 1);
+            return 50;
           }
         });
       }, 1000);
     }
+    // else {
+    //   clearInterval(timer);
+    //   setIsRunning(false);
+    //   setIsDone(true);
+    //   console.log("interval");
+    //   if (intervalEnabled) {
+    //     console.log("INNE I IF SATSEN");
+    //     handleInterval(); // Anropa endast handleInterval när timern har nått 0
+    //   }
+    //   // return 0;
+    // }
 
     return () => clearInterval(timer);
-  }, [isRunning, minutes, seconds]);
+  }, [
+    isRunning,
+    minutes,
+    seconds,
+    // intervalEnabled
+  ]);
 
-  // Startar timern
-  const startTimer = (initialMinutes) => {
-    setMinutes(initialMinutes - 1);
-    setSeconds(59);
-    setIsRunning(true);
-    setIsDone(false);
+  const handleInterval = () => {
+    if (breakEnabled) {
+      console.log("breakEnabled");
+      setMinutes(5);
+      setSeconds(0);
+      setIsRunning(true);
+      setBreakEnabled(false);
+    } else {
+      console.log("DEN ANDRA");
+      setBreakEnabled(true);
+      startTimer(minutesSetByUser);
+      setCurrentInterval((prevInterval) => prevInterval + 1);
+    }
   };
 
-  // Stoppar timern
+  const startTimer = (initialMinutes) => {
+    if (initialMinutes > 0) {
+      setSeconds(0);
+      setIsDone(false);
+      setIsRunning(true);
+      setMinutes(initialMinutes);
+      setMinutesSetByUser(initialMinutes);
+    }
+  };
+
   const stopTimer = () => {
     setIsRunning(false);
   };
 
-  // Reset av timern
   const resetTimer = () => {
-    setMinutes(0);
     setSeconds(0);
-    setIsRunning(false);
     setIsDone(false);
+    setIsRunning(false);
+    setCurrentInterval(0);
+    setMinutes(minutesSetByUser);
   };
 
   return (
     <GlobalTimerContext.Provider
       value={{
-        minutes,
-        seconds,
-        isRunning,
-        isDone,
+        // isDone,
+        // isRunning,
+        // resetTimer,
+        // minutesSetByUser,
+        // currentInterval,
         startTimer,
         stopTimer,
-        resetTimer,
+        minutes,
+        setMinutes,
+        seconds,
+        breakEnabled,
+        setBreakEnabled,
+        intervalEnabled,
+        setIntervalEnabled,
       }}
     >
       {children}
@@ -70,7 +107,6 @@ export function GlobalTimerProvider({ children }) {
   );
 }
 
-// Hook för att kunna använda GlobalTimerContext från vilken komponent som helst
 export function useGlobalTimer() {
   return useContext(GlobalTimerContext);
 }

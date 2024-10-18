@@ -1,8 +1,5 @@
 .landingPage__link {
   text-decoration: none;
-}
-
-.landingPage__section {
   height: 100vh;
   display: flex;
   cursor: pointer;

@@ -63,3 +63,32 @@
   font-family: PT sans, sans-serif;
   background-color: rgb(255, 255, 255);
 }
+
+.setTimer__alert-message {
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff0000c5;
+  line-height: 20.7px;
+  letter-spacing: 0.1em;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: PT sans, sans-serif;
+}
+
+.alert-btn {
+  display: flex;
+  padding: 10px 0;
+  font-size: 24px;
+  font-weight: 800;
+  border-radius: 5px;
+  color: #ff0000c5;
+  margin-bottom: 3rem;
+  line-height: 31.06px;
+  letter-spacing: 0.1em;
+  justify-content: center;
+  text-transform: uppercase;
+  border: 2.5px solid #ff0000c5;
+  font-family: PT sans, sans-serif;
+  background-color: rgb(255, 255, 255);
+}

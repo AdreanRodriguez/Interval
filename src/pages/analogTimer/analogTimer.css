@@ -16,33 +16,11 @@
   font-family: PT sans, sans-serif;
 }
 
-/* .analogTimer__clock {
-  width: 278px;
-  height: 278px;
-  position: relative;
-  display: flex;
-  justify-content: center;
+.analogTimer__interval {
+  /* margin-top: 1rem; */
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 25.88px;
+  font-family: PT sans, sans-serif;
 }
-
-.analogTimer__img-clock {
-  position: absolute;
-}
-
-.analogTimer__img-hour {
-  position: absolute;
-  top: 14.78px;
-}
-
-.analogTimer__img-min {
-  position: absolute;
-  top: 14.78px;
-}
-
-.analogTimer__img-sec {
-  position: absolute;
-  top: 14px;
-}
-.analogTimer__img-dot {
-  position: absolute;
-  top: 134px;
-} */

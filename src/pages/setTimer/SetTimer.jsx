@@ -9,8 +9,9 @@ import { useGlobalTimer } from "../../components/globalTimerContext/GlobalTimerC
 
 function SetTimer() {
   const navigate = useNavigate();
-  const { startTimer } = useGlobalTimer();
-  const [minutes, setMinutes] = useState(0);
+  // const [minutes, setMinutes] = useState(0);
+  const [alertMessaage, setAlertMessage] = useState("");
+  const { startTimer, minutes, setMinutes } = useGlobalTimer();
 
   useEffect(() => {}, [minutes]);
 
@@ -23,8 +24,14 @@ function SetTimer() {
   }
 
   function handleStartTimer() {
-    startTimer(minutes);
-    navigate("/analogTimer");
+    if (minutes > 0) {
+      startTimer(minutes);
+      navigate("/digitalTimer");
+    } else {
+      const redButton = document.querySelector(".setTimer__btn");
+      redButton.classList.add("alert-btn");
+      setAlertMessage("Please select minutes");
+    }
   }
 
   return (
@@ -34,23 +41,24 @@ function SetTimer() {
         <div className="setTimer__margin-bottom"></div>
         <section className="setTimer__time-section">
           <img
-            className="setTimer__time-section__arrow"
-            onClick={lessMinutes}
             src={leftArrow}
             alt="A arrow logo"
+            onClick={lessMinutes}
+            className="setTimer__time-section__arrow"
           />
           <time className="setTimer__time-section__nmbr-text-wrapper">
             <h3 className="setTimer__time-section__time">{minutes}</h3>
             <p className="setTimer__time-section__time-text">minutes</p>
           </time>
           <img
-            className="setTimer__time-section__arrow"
-            onClick={moreMinutes}
             src={rightArrow}
             alt="A arrow logo"
+            onClick={moreMinutes}
+            className="setTimer__time-section__arrow"
           />
         </section>
         <Checkbox />
+        {alertMessaage && <p className="setTimer__alert-message"> {alertMessaage} </p>}
         <button onClick={handleStartTimer} className="setTimer__btn">
           start timer
         </button>

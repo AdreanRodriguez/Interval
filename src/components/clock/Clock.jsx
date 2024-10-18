@@ -7,9 +7,6 @@ import blackDot from "../../assets/timer-template/blackDot.svg";
 import lightGreyDot from "../../assets/timer-template/lightGreyDot.svg";
 
 function Clock({ minutes, seconds }) {
-  const secondsRotation = seconds * -6; // 360 / 60 = 6 grader per sekund
-  const minutesRotation = minutes * 6 + seconds / 10;
-
   return (
     <time className="clock">
       <img className="clock__img" src={clock} alt="clock" />
@@ -18,14 +15,14 @@ function Clock({ minutes, seconds }) {
         className="clock__min-img"
         src={minute}
         alt="minute"
-        animate={{ rotate: minutesRotation }}
+        animate={{ rotate: minutes * 6 + seconds / -10 }}
         transition={{ duration: 0.5, ease: "linear" }}
       />
       <motion.img
         className="clock__sec-img"
         src={second}
         alt="second"
-        animate={{ rotate: secondsRotation }}
+        animate={{ rotate: seconds * -6 }}
         transition={{ duration: 0.5, ease: "linear" }}
       />
       <img className="clock__grey-dot-img" src={lightGreyDot} alt="lightGreyDot" />
