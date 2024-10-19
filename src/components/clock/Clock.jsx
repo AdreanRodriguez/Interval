@@ -8,8 +8,9 @@ import lightGreyDot from "../../assets/timer-template/lightGreyDot.svg";
 import { useGlobalTimer } from "../globalTimerContext/GlobalTimerContext";
 
 function Clock() {
-  const { minutes, seconds } = useGlobalTimer();
-
+  const { minutes, seconds, minutesSetByUser } = useGlobalTimer();
+  const minuteArm = ((minutesSetByUser - minutes - seconds / 60) / minutesSetByUser) * 360;
+  const secondArm = (seconds / 60) * -360;
   return (
     <time className="clock">
       <img className="clock__img" src={clock} alt="clock" />
@@ -18,14 +19,16 @@ function Clock() {
         src={minute}
         alt="minute"
         className="clock__min-img"
-        animate={{ rotate: (360 * minutes) / -60 }}
-        transition={{ duration: 0.5, ease: "linear" }}
+        animate={{
+          rotate: minuteArm,
+        }}
+        transition={{ duration: 1, ease: "linear" }}
       />
       <motion.img
         src={second}
         alt="second"
         className="clock__sec-img"
-        animate={{ rotate: (360 * seconds) / -60 }}
+        animate={{ rotate: secondArm }}
         transition={{ duration: 0.5, ease: "linear" }}
       />
       <img className="clock__grey-dot-img" src={lightGreyDot} alt="lightGreyDot" />
