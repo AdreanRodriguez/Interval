@@ -9,6 +9,7 @@ import { useGlobalTimer } from "../globalTimerContext/GlobalTimerContext";
 
 function Clock() {
   const { minutes, seconds } = useGlobalTimer();
+
   return (
     <time className="clock">
       <img className="clock__img" src={clock} alt="clock" />
@@ -17,14 +18,14 @@ function Clock() {
         src={minute}
         alt="minute"
         className="clock__min-img"
-        animate={{ rotate: (59 - minutes) * 6 + seconds / 10 }}
+        animate={{ rotate: (360 * minutes) / -60 }}
         transition={{ duration: 0.5, ease: "linear" }}
       />
       <motion.img
         src={second}
         alt="second"
         className="clock__sec-img"
-        animate={{ rotate: seconds * -6 }}
+        animate={{ rotate: (360 * seconds) / -60 }}
         transition={{ duration: 0.5, ease: "linear" }}
       />
       <img className="clock__grey-dot-img" src={lightGreyDot} alt="lightGreyDot" />
