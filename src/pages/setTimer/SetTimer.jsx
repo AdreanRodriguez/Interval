@@ -1,19 +1,16 @@
 import "./setTimer.css";
 import { useEffect, useState } from "react";
 import Menu from "../../components/menu/Menu";
-import { useNavigate } from "react-router-dom";
 import leftArrow from "../../assets/left-arrow.svg";
 import rightArrow from "../../assets/right-arrow.svg";
 import Checkbox from "../../components/checkbox/Checkbox";
 import { useGlobalTimer } from "../../components/globalTimerContext/GlobalTimerContext.jsx";
 
 function SetTimer() {
-  const navigate = useNavigate();
-  // const [minutes, setMinutes] = useState(0);
   const [alertMessaage, setAlertMessage] = useState("");
-  const { startTimer, minutes, setMinutes } = useGlobalTimer();
+  const { startTimer, minutes, setMinutes, navigateTo } = useGlobalTimer();
 
-  useEffect(() => {}, [minutes]);
+  // useEffect(() => {}, [minutes]);
 
   function moreMinutes() {
     setMinutes((prevMinutes) => prevMinutes + 1);
@@ -26,7 +23,7 @@ function SetTimer() {
   function handleStartTimer() {
     if (minutes > 0) {
       startTimer(minutes);
-      navigate("/digitalTimer");
+      navigateTo("/digitalTimer");
     } else {
       const redButton = document.querySelector(".setTimer__btn");
       redButton.classList.add("alert-btn");

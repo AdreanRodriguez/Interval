@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const GlobalTimerContext = createContext();
 
@@ -11,7 +12,7 @@ export function GlobalTimerProvider({ children }) {
   const [currentInterval, setCurrentInterval] = useState(0);
   const [minutesSetByUser, setMinutesSetByUser] = useState(0);
   const [intervalEnabled, setIntervalEnabled] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     let timer;
     if (isRunning && (minutes > 0 || seconds > 0)) {
@@ -25,39 +26,32 @@ export function GlobalTimerProvider({ children }) {
           }
         });
       }, 1000);
+    } else if (minutes === 0 && seconds === 0) {
+      setIsRunning(false);
+      setIsDone(true);
+      if (breakEnabled) {
+        navigateTo("/breakView");
+      } else if (intervalEnabled) {
+        handleInterval();
+      } else {
+        whenTimerIsDone("/setTimer");
+      }
     }
-    // else {
-    //   clearInterval(timer);
-    //   setIsRunning(false);
-    //   setIsDone(true);
-    //   console.log("interval");
-    //   if (intervalEnabled) {
-    //     console.log("INNE I IF SATSEN");
-    //     handleInterval(); // Anropa endast handleInterval när timern har nått 0
-    //   }
-    //   // return 0;
-    // }
 
     return () => clearInterval(timer);
-  }, [
-    isRunning,
-    minutes,
-    seconds,
-    // intervalEnabled
-  ]);
+  }, [isRunning, minutes, seconds, intervalEnabled]);
 
-  const handleInterval = () => {
-    if (breakEnabled) {
-      console.log("breakEnabled");
-      setMinutes(5);
-      setSeconds(0);
-      setIsRunning(true);
-      setBreakEnabled(false);
-    } else {
-      console.log("DEN ANDRA");
-      setBreakEnabled(true);
+  const handleInterval = (view) => {
+    if (intervalEnabled) {
+      console.log("inne i interval, första checkboxen");
       startTimer(minutesSetByUser);
       setCurrentInterval((prevInterval) => prevInterval + 1);
+    }
+    if (breakEnabled) {
+      console.log("inne i breakEnabled");
+      navigateTo(view);
+      setIsRunning(true);
+      setBreakEnabled(true);
     }
   };
 
@@ -68,11 +62,23 @@ export function GlobalTimerProvider({ children }) {
       setIsRunning(true);
       setMinutes(initialMinutes);
       setMinutesSetByUser(initialMinutes);
+    } else {
+      setIsDone(true);
+    }
+  };
+
+  const whenTimerIsDone = (view) => {
+    if (minutes === 0 && seconds === 0) {
+      navigateTo(view);
     }
   };
 
   const stopTimer = () => {
     setIsRunning(false);
+  };
+
+  const navigateTo = (view) => {
+    navigate(view);
   };
 
   const resetTimer = () => {
@@ -87,16 +93,21 @@ export function GlobalTimerProvider({ children }) {
     <GlobalTimerContext.Provider
       value={{
         // isDone,
-        // isRunning,
         // resetTimer,
-        // minutesSetByUser,
-        // currentInterval,
+
+        minutesSetByUser,
+        currentInterval,
+        whenTimerIsDone,
+        isRunning,
+        navigateTo,
         startTimer,
         stopTimer,
         minutes,
         setMinutes,
+        setSeconds,
         seconds,
         breakEnabled,
+        handleInterval,
         setBreakEnabled,
         intervalEnabled,
         setIntervalEnabled,

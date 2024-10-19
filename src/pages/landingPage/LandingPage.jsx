@@ -44,7 +44,7 @@ function LandingPage() {
           opacity: 1,
         }}
         transition={{
-          duration: 3.5,
+          duration: 3,
           ease: "easeIn",
         }}
       >
