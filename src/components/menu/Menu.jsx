@@ -1,8 +1,8 @@
 import "./menu.css";
-import logoBlack from "../../assets/logo-black.svg";
-import logowhite from "../../assets/logo-white.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logoBlack from "../../assets/logo-black.svg";
+import logowhite from "../../assets/logo-white.svg";
 
 function Menu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

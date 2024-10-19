@@ -4,7 +4,7 @@ import Button from "./../../components/button/Button";
 import { useGlobalTimer } from "../../components/globalTimerContext/GlobalTimerContext";
 
 function TextTimer() {
-  const { minutes, seconds } = useGlobalTimer();
+  const { minutes, seconds, stopTimer, currentInterval } = useGlobalTimer();
 
   function convertNumberToText(nmbr) {
     const numbers = [
@@ -46,11 +46,15 @@ function TextTimer() {
     <section className="textTimer__section">
       <Menu />
       <p className="textTimer__heading">interval</p>
+      {currentInterval > 0 && (
+        <p className="digitalTimer__interval">Current interval: {currentInterval}</p>
+      )}
       <time className="textTimer__text">
         {convertNumberToText(minutes)} {minutes === 1 ? "minut" : "minuter"} och{" "}
         {convertNumberToText(seconds)} {seconds === 1 ? "sekund" : "sekunder"} kvar
       </time>
-      <Button text="abort timer" href="/setTimer" />
+
+      <Button text="abort timer" href="/setTimer" onClick={stopTimer} />
     </section>
   );
 }

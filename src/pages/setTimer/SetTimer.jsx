@@ -1,5 +1,5 @@
 import "./setTimer.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Menu from "../../components/menu/Menu";
 import leftArrow from "../../assets/left-arrow.svg";
 import rightArrow from "../../assets/right-arrow.svg";
@@ -9,8 +9,6 @@ import { useGlobalTimer } from "../../components/globalTimerContext/GlobalTimerC
 function SetTimer() {
   const [alertMessaage, setAlertMessage] = useState("");
   const { startTimer, minutes, setMinutes, navigateTo } = useGlobalTimer();
-
-  // useEffect(() => {}, [minutes]);
 
   function moreMinutes() {
     setMinutes((prevMinutes) => prevMinutes + 1);

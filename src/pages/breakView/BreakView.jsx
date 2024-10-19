@@ -1,15 +1,13 @@
 import "./breakView.css";
 import pause from "../../assets/pause.svg";
+import { useEffect, useState } from "react";
 import Button from "../../components/button/Button";
 import { useGlobalTimer } from "../../components/globalTimerContext/GlobalTimerContext";
-// import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 function BreakView() {
-  // const navigate = useNavigate();
-  const [breakMinutes, setBreakMinutes] = useState(0);
-  const [breakSeconds, setBreakSeconds] = useState(3);
-  const { startTimer, minutesSetByUser, navigateTo, handleInterval } = useGlobalTimer();
+  const [breakMinutes, setBreakMinutes] = useState(5);
+  const [breakSeconds, setBreakSeconds] = useState(0);
+  const { startTimer, minutesSetByUser, handleInterval } = useGlobalTimer();
 
   useEffect(() => {
     let breakTimer;
@@ -30,7 +28,7 @@ function BreakView() {
     }
 
     return () => clearInterval(breakTimer);
-  }, [breakMinutes, breakSeconds, navigateTo, startTimer, minutesSetByUser]);
+  }, [breakMinutes, breakSeconds, startTimer, minutesSetByUser]);
 
   return (
     <section className="breakView__section">
@@ -43,7 +41,12 @@ function BreakView() {
         </time>
       </div>
 
-      <Button text="no pause, go now!" href="/digitalTimer" className="btn-white-text" />
+      <Button
+        text="no pause, go now!"
+        href="/digitalTimer"
+        className="btn-white-text"
+        onClick={() => startTimer(minutesSetByUser)}
+      />
     </section>
   );
 }

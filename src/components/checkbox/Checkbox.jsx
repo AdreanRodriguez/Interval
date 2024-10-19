@@ -1,24 +1,17 @@
 import { useGlobalTimer } from "../globalTimerContext/GlobalTimerContext";
 import "./checkbox.css";
-// import { useState } from "react";
 
 function Checkbox() {
-  // const [isBreakChecked, setIsBreakChecked] = useState(false);
-  // const [isIntervalChecked, setIsIntervalChecked] = useState(false);
-  const { intervalEnabled, setIntervalEnabled, breakEnabled, setBreakEnabled, navigateTo } =
-    useGlobalTimer();
+  const { intervalEnabled, breakEnabled, setBreakEnabled, setIntervalEnabled } = useGlobalTimer();
 
   function handleIntervalIfChecked(e) {
     const checked = e.target.checked;
     setIntervalEnabled(checked);
-    // setIsIntervalChecked(checked);
   }
 
   function handleFiveMinutesBreakInterval(e) {
     const checked = e.target.checked;
     setBreakEnabled(checked);
-    navigateTo("/breakView");
-    // setIsBreakChecked(checked);
   }
 
   return (

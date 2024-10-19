@@ -1,15 +1,10 @@
 .setTimer__section {
   height: 100vh;
-  padding: 0 1rem;
   display: flex;
+  padding: 0 1rem;
   flex-direction: column;
-  justify-content: space-between;
   background-color: white;
-  /* position: absolute;
-  top: 274px;
-  right: 0;
-  left: 0;
-  bottom: auto; */
+  justify-content: space-between;
 }
 
 .setTimer__margin-bottom {
@@ -18,10 +13,10 @@
 
 .setTimer__time-section {
   display: flex;
+  padding: 0 3rem;
+  align-items: center;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  padding: 0 3rem;
 }
 
 .setTimer__time-section__nmbr-text-wrapper {

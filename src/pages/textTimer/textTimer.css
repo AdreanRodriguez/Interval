@@ -25,3 +25,12 @@
   font-family: PT sans, sans-serif;
   text-transform: uppercase;
 }
+
+.textTimer__interval {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 25.88px;
+  font-family: PT sans, sans-serif;
+  margin-bottom: -11rem;
+}

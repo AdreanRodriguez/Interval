@@ -1,25 +1,26 @@
 .analogTimer__section {
   height: 100vh;
-  padding: 0 3rem;
   display: flex;
+  padding: 0 3rem;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .analogTimer__heading {
-  margin-top: 1rem;
   font-size: 20px;
+  margin-top: 1rem;
   font-weight: 400;
-  letter-spacing: 0.1em;
   line-height: 25.88px;
+  letter-spacing: 0.1em;
   font-family: PT sans, sans-serif;
 }
 
 .analogTimer__interval {
   font-size: 20px;
   font-weight: 400;
-  letter-spacing: 0.1em;
   line-height: 25.88px;
+  margin-bottom: -2rem;
+  letter-spacing: 0.1em;
   font-family: PT sans, sans-serif;
 }
