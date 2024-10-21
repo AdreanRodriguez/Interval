@@ -59,12 +59,13 @@
   background-color: rgb(255, 255, 255);
 }
 
-.setTimer__alert-message {
+.setTimer__error-message {
   display: flex;
   font-size: 16px;
   font-weight: bold;
   color: #ff0000c5;
   line-height: 20.7px;
+  margin-bottom: -5rem;
   letter-spacing: 0.1em;
   justify-content: center;
   text-transform: uppercase;

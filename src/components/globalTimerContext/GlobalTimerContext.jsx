@@ -6,8 +6,10 @@ const GlobalTimerContext = createContext();
 export function GlobalTimerProvider({ children }) {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
+  const [errorMsg, setErrorMsg] = useState("");
   const [isRunning, setIsRunning] = useState(false);
   const [breakEnabled, setBreakEnabled] = useState(false);
+  const [isErrorActive, setIsErrorActive] = useState(false);
   const [currentInterval, setCurrentInterval] = useState(0);
   const [minutesSetByUser, setMinutesSetByUser] = useState(0);
   const [intervalEnabled, setIntervalEnabled] = useState(false);
@@ -33,7 +35,7 @@ export function GlobalTimerProvider({ children }) {
         setBreakEnabled(true);
         navigateTo("/breakView");
       } else {
-        navigateTo("/setTimer");
+        navigateTo("/alarmView");
       }
     }
 
@@ -83,19 +85,23 @@ export function GlobalTimerProvider({ children }) {
       value={{
         minutes,
         seconds,
+        errorMsg,
         stopTimer,
         isRunning,
         setSeconds,
         setMinutes,
         startTimer,
         navigateTo,
+        setErrorMsg,
         breakEnabled,
+        isErrorActive,
         handleInterval,
         currentInterval,
         whenTimerIsDone,
         setBreakEnabled,
         intervalEnabled,
         minutesSetByUser,
+        setIsErrorActive,
         setIntervalEnabled,
       }}
     >

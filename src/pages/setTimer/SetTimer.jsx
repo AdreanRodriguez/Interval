@@ -1,5 +1,5 @@
 import "./setTimer.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "../../components/menu/Menu";
 import leftArrow from "../../assets/left-arrow.svg";
 import rightArrow from "../../assets/right-arrow.svg";
@@ -7,8 +7,23 @@ import Checkbox from "../../components/checkbox/Checkbox";
 import { useGlobalTimer } from "../../components/globalTimerContext/GlobalTimerContext.jsx";
 
 function SetTimer() {
-  const [alertMessaage, setAlertMessage] = useState("");
-  const { startTimer, minutes, setMinutes, navigateTo } = useGlobalTimer();
+  const {
+    minutes,
+    errorMsg,
+    startTimer,
+    setMinutes,
+    navigateTo,
+    setErrorMsg,
+    isErrorActive,
+    setIsErrorActive,
+  } = useGlobalTimer();
+
+  useEffect(() => {
+    if (minutes > 0) {
+      setErrorMsg("");
+      setIsErrorActive(false);
+    }
+  }, [setIsErrorActive, setErrorMsg, minutes]);
 
   function moreMinutes() {
     setMinutes((prevMinutes) => prevMinutes + 1);
@@ -23,9 +38,8 @@ function SetTimer() {
       startTimer(minutes);
       navigateTo("/digitalTimer");
     } else {
-      const redButton = document.querySelector(".setTimer__btn");
-      redButton.classList.add("alert-btn");
-      setAlertMessage("Please select minutes");
+      setIsErrorActive(true);
+      setErrorMsg("Please select minutes");
     }
   }
 
@@ -53,8 +67,11 @@ function SetTimer() {
           />
         </section>
         <Checkbox />
-        {alertMessaage && <p className="setTimer__alert-message"> {alertMessaage} </p>}
-        <button onClick={handleStartTimer} className="setTimer__btn">
+        {isErrorActive && <p className="setTimer__error-message"> {errorMsg} </p>}
+        <button
+          onClick={handleStartTimer}
+          className={`setTimer__btn ${isErrorActive ? "alert-btn" : null}`}
+        >
           start timer
         </button>
       </section>

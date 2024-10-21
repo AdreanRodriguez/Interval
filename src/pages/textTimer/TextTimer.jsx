@@ -9,7 +9,7 @@ function TextTimer() {
   function convertNumberToText(nmbr) {
     const numbers = [
       "noll",
-      "ett",
+      "en",
       "två",
       "tre",
       "fyra",
@@ -29,6 +29,7 @@ function TextTimer() {
       "arton",
       "nitton",
     ];
+
     const tens = ["", "", "tjugo", "trettio", "fyrtio", "femtio", "sextio"];
 
     if (nmbr < 20) {

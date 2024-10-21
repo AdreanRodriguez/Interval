@@ -2,9 +2,13 @@ import "./digitalTimer.css";
 import Menu from "../../components/menu/Menu";
 import Button from "./../../components/button/Button";
 import { useGlobalTimer } from "../../components/globalTimerContext/GlobalTimerContext";
+import { motion } from "framer-motion";
 
 function DigitalTimer() {
   const { minutes, seconds, stopTimer, currentInterval } = useGlobalTimer();
+
+  const secondsIsLessThenTen = minutes === 0 && seconds < 10;
+  const bonunceFast = secondsIsLessThenTen && 0.5;
 
   return (
     <section className="digitalTimer__section">
@@ -14,7 +18,14 @@ function DigitalTimer() {
         <p className="digitalTimer__interval">Current interval: {currentInterval}</p>
       )}
       <time className="digitalTimer__time">
-        {minutes > 0 ? minutes : 0}:{seconds < 10 ? `0${seconds}` : seconds}
+        <p>{minutes > 0 ? minutes : 0}</p>
+        <motion.p>:</motion.p>
+        <motion.p
+          animate={{ scale: secondsIsLessThenTen ? [1, 1.1] : 1 }}
+          transition={{ duration: bonunceFast, repeat: Infinity }}
+        >
+          {seconds < 10 ? `0${seconds}` : seconds}
+        </motion.p>
       </time>
 
       <Button href="/setTimer" text="abort timer" onClick={stopTimer} />

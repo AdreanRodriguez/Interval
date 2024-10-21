@@ -10,8 +10,8 @@
   text-transform: uppercase;
   background-color: white;
   border: 1px solid #222222;
-  font-family: PT sans, sans-serif;
   transition: transform 0.3s ease;
+  font-family: PT sans, sans-serif;
 }
 
 .button:hover {

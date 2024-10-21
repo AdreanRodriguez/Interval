@@ -4,6 +4,18 @@
   margin-top: 4.25rem;
 }
 
+.checkbox__error_message {
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff0000c5;
+  line-height: 20.7px;
+  letter-spacing: 0.1em;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: PT sans, sans-serif;
+}
+
 .checkbox__label-wrapper {
   display: flex;
   margin: 1rem 0;

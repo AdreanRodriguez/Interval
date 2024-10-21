@@ -12,7 +12,7 @@
   background-color: rgb(0, 0, 0, 0.9);
 }
 
-.menu {
+.menu__logo {
   top: 0;
   left: 0;
   z-index: 2;
@@ -22,6 +22,14 @@
   margin-top: 1rem;
   margin-left: 1rem;
   position: absolute;
+}
+
+.menu__logo.rotate-right {
+  animation: rotate-right 0.5s;
+}
+
+.menu__logo.rotate-left {
+  animation: rotate-left 0.5s;
 }
 
 .open {
@@ -45,4 +53,28 @@
 .menu__text:hover {
   transition: transform 0.5s ease-in-out;
   transform: scale(1.2);
+}
+
+@keyframes rotate-right {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate-left {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

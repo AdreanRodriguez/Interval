@@ -2,13 +2,13 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #222222;
   background-size: 100%;
+  flex-direction: column;
+  background-color: #222222;
   background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: center;
+  justify-content: space-between;
   background-image: url(../../assets/alarmViewCircles.svg);
 }
 
@@ -33,7 +33,7 @@
 }
 
 .btn-white-text {
-  background-color: transparent;
-  border: 1px solid #ffffff;
   color: #ffffff;
+  border: 1px solid #ffffff;
+  background-color: transparent;
 }

@@ -11,6 +11,7 @@ function Clock() {
   const { minutes, seconds, minutesSetByUser } = useGlobalTimer();
   const minuteArm = ((minutesSetByUser - minutes - seconds / 60) / minutesSetByUser) * 360;
   const secondArm = (seconds / 60) * -360;
+
   return (
     <time className="clock">
       <img className="clock__img" src={clock} alt="clock" />
@@ -19,9 +20,7 @@ function Clock() {
         src={minute}
         alt="minute"
         className="clock__min-img"
-        animate={{
-          rotate: minuteArm,
-        }}
+        animate={{ rotate: minuteArm }}
         transition={{ duration: 1, ease: "linear" }}
       />
       <motion.img
