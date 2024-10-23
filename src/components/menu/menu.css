@@ -51,8 +51,8 @@
 }
 
 .menu__text:hover {
-  transition: transform 0.5s ease-in-out;
-  transform: scale(1.2);
+  animation: scaleUp 0.5s forwards;
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 @keyframes rotate-right {
@@ -76,5 +76,15 @@
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
   }
 }
