@@ -15,14 +15,14 @@ function AlarmView() {
           animate={{
             rotate: [-10, 10, -10, 10, -10, 10, -10, 10, -10, 10, -10, 10, -10, 10, -10, 10, 0],
           }}
-          transition={{ duration: 1, repeat: Infinity, repeatDelay: 1 }}
+          transition={{ repeat: Infinity, repeatDelay: 1 }}
         />
         <motion.p
           className="alarmView__text"
           animate={{
             rotate: [-10, 10, -10, 10, -10, 10, -10, 10, -10, 10, -10, 10, -10, 10, -10, 10, 0],
           }}
-          transition={{ duration: 1, repeat: Infinity, repeatDelay: 1 }}
+          transition={{ repeat: Infinity, repeatDelay: 1 }}
         >
           Times up!
         </motion.p>
