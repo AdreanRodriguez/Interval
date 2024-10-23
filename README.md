@@ -1,9 +1,15 @@
-# React + Vite
+#### Detta projekt är en mobilanpassad tidtagningsapp med målet att skapa en ultimat timer-upplevelse. Appen erbjuder flera olika vyer för att visa tid och har funktionalitet som stöder användningsområden som studier och parprogrammering.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Innehåller: 
+#### Loading-vy: Visar en välkomstskärm med logotyp och slogan. Användaren går vidare till vyn för att sätta timern genom att klicka på logotypen.
+#### Set Timer: Användaren ställer in timerns varaktighet i minuter. Ingår även stöd för intervaller och valbar paus på 5 minuter mellan varje intervall.
+#### Analog Timer: Visar tiden med en analog urtavla. Minutvisaren går hela timerns tid på ett varv medans sekundvisaren går ett varv på 60 sekunder.
+#### Digital Timer: Visar tiden digitalt och uppdaterar varje sekund.
+#### Alarmvy: Visas när timern har nått noll. Det är en klocka samt text under där det står Times up! och är animerade så att det ser ut som att de "vibrerar"
+#### Text Timer: Visar tiden som skriven text.
+#### Alla timer-vyer innehåller en meny-ikon för att växla mellan olika vyer utan att nollställa timern som också är animerad så den tiltar 15 grader vid klick.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# Interval
+Tekniska krav
+Använde mig utav 
+Utvecklad i React med Framer Motion samt HTML, CSS och vanilla JS.
+Minst en CSS-animering, t.ex. transitions eller keyframes, används.
