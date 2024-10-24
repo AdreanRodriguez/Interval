@@ -20,10 +20,10 @@ export function GlobalTimerProvider({ children }) {
       timer = setInterval(() => {
         setSeconds((prevSeconds) => {
           if (prevSeconds > 0) {
-            return prevSeconds - 10;
+            return prevSeconds - 1;
           } else if (minutes > 0) {
             setMinutes(minutes - 1);
-            return 50;
+            return 59;
           }
         });
       }, 1000);
