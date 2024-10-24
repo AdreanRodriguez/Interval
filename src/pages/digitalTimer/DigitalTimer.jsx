@@ -19,7 +19,7 @@ function DigitalTimer() {
       )}
       <time className="digitalTimer__time">
         <p>{minutes > 0 ? minutes : 0}</p>
-        <motion.p>:</motion.p>
+        <p>:</p>
         <motion.p
           animate={{ scale: secondsIsLessThenTen ? [1, 1.1] : 1 }}
           transition={{ duration: bonunceFast, repeat: Infinity }}
