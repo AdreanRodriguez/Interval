@@ -17,3 +17,8 @@
 
 ### Tekniska krav
 Utvecklad i React med Framer Motion samt HTML, CSS och vanilla JS.
+
+
+![bild](https://github.com/user-attachments/assets/8a9e871d-73d1-46aa-802e-ca7d2f0cca73) 
+
+![bild](https://github.com/user-attachments/assets/90600fd7-8560-48a4-a042-0605f0f4ddd9)
